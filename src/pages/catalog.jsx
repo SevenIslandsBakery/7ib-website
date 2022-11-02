@@ -1,5 +1,8 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
+import { Footer } from '@/components/Footer'
 import { Logo } from '@/components/Logo'
+import products from '@/products/products.json'
 import {
   Dialog,
   Disclosure,
@@ -9,235 +12,217 @@ import {
   Transition,
 } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import {
-  Bars3Icon,
-  ShoppingCartIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { Fragment, useState } from 'react'
-
-const navigation = {
-  pages: [
-    { name: 'Company', href: '#' },
-    { name: 'Stores', href: '#' },
-  ],
-}
-const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
-]
-const filters = [
-  {
-    id: 'category',
-    name: 'Category',
-    options: [
-      { value: 'dry-cake', label: 'Dry Cakes', checked: false },
-      { value: 'cookie', label: 'Cookies', checked: false },
-      { value: 'energy-bar', label: 'Energy Bars', checked: false },
-      { value: 'biscuit', label: 'Biscuits', checked: false },
-    ],
-  },
-  {
-    id: 'weight',
-    name: 'Weight',
-    options: [
-      { min: 0, max: 300, label: 'Under 300gm', checked: false },
-      { min: 300, max: 400, label: '300gm - 400gm', checked: false },
-      { min: 400, max: 500, label: '400gm - 500gm', checked: false },
-      { min: 500, max: 600, label: '500gm - 600gm', checked: false },
-      { min: 600, max: 700, label: '600gm - 700gm', checked: false },
-      { min: 700, max: 100000, label: 'Over 700gm', checked: false },
-    ],
-  },
-  {
-    id: 'price',
-    name: 'Price',
-    options: [
-      { min: 0, max: 300, label: 'Under Rs. 300', checked: false },
-      { min: 300, max: 400, label: 'Rs. 300 - Rs. 400', checked: false },
-      { min: 400, max: 500, label: 'Rs. 400 - Rs. 500', checked: false },
-      { min: 500, max: 600, label: 'Rs. 500 - Rs. 600', checked: false },
-      { min: 600, max: 700, label: 'Rs. 600 - Rs. 700', checked: false },
-      { min: 700, max: 100000, label: 'Over Rs. 700', checked: false },
-    ],
-  },
-]
-let activeFilters = []
-
-function updateFilter(sectionId, option, inputObject) {
-  filters[sectionId].options.filter((_option) => _option.label === option.label).checked = inputObject.checked;
-  updateFilterProducts();
-  updateActiveFilters();
-}
-
-function updateActiveFilters(){
-  activeFilters = [];
-  filters.forEach(filter=>{
-    filter.options.forEach(option=>{
-      if(option.checked){
-        activeFilters.push(option);
-      }
-    })
-  })
-}
-
-const products = [
-  {
-    id: 1,
-    name: 'Earthen Bottle',
-    href: '#',
-    price: '48',
-    weight: '450',
-    category: 'cookie',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
-    imageAlt:
-      'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-  },
-  {
-    id: 2,
-    name: 'Nomad Tumbler',
-    href: '#',
-    price: '35',
-    weight: '430',
-    category: 'dry-cake',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
-    imageAlt:
-      'Olive drab green insulated bottle with flared screw lid and flat top.',
-  },
-  {
-    id: 3,
-    name: 'Focus Paper Refill',
-    href: '#',
-    price: '89',
-    weight: '250',
-    category: 'energy-bar',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg',
-    imageAlt:
-      'Person using a pen to cross a task off a productivity paper card.',
-  },
-  {
-    id: 4,
-    name: 'Machined Mechanical Pencil',
-    href: '#',
-    price: '35',
-    weight: '550',
-    category: 'cookie',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
-    imageAlt:
-      'Hand holding black machined steel mechanical pencil with brass tip and top.',
-  },
-  {
-    id: 5,
-    name: 'Earthen Bottle',
-    href: '#',
-    price: '48',
-    weight: '150',
-    category: 'dry-cake',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
-    imageAlt:
-      'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-  },
-  {
-    id: 6,
-    name: 'Nomad Tumbler',
-    href: '#',
-    price: '35',
-    weight: '850',
-    category: 'energy-bar',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
-    imageAlt:
-      'Olive drab green insulated bottle with flared screw lid and flat top.',
-  },
-  {
-    id: 7,
-    name: 'Focus Paper Refill',
-    href: '#',
-    price: '89',
-    weight: '650',
-    category: 'biscuit',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg',
-    imageAlt:
-      'Person using a pen to cross a task off a productivity paper card.',
-  },
-  {
-    id: 8,
-    name: 'Machined Mechanical Pencil',
-    href: '#',
-    price: '35',
-    weight: '750',
-    category: 'biscuit',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
-    imageAlt:
-      'Hand holding black machined steel mechanical pencil with brass tip and top.',
-  },
-]
-
-function isProductEligible(product) {
-  // return true;
-  let result = false
-  let localCategoryFilters = filters[1].options.filter(
-    (option) => option.checked
-  )
-  console.log(localCategoryFilters)
-  return true;
-}
-
-const filteredProducts = [];
-
-function updateFilterProducts(){
-  products.forEach(product=>{
-    if(isProductEligible(product)){
-      filteredProducts.push(product);
-    }
-  })
-}
-
-const footerNavigation = {
-  products: [
-    { name: 'Bags', href: '#' },
-    { name: 'Tees', href: '#' },
-    { name: 'Objects', href: '#' },
-    { name: 'Home Goods', href: '#' },
-    { name: 'Accessories', href: '#' },
-  ],
-  company: [
-    { name: 'Who we are', href: '#' },
-    { name: 'Sustainability', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Careers', href: '#' },
-    { name: 'Terms & Conditions', href: '#' },
-    { name: 'Privacy', href: '#' },
-  ],
-  customerService: [
-    { name: 'Contact', href: '#' },
-    { name: 'Shipping', href: '#' },
-    { name: 'Returns', href: '#' },
-    { name: 'Warranty', href: '#' },
-    { name: 'Secure Payments', href: '#' },
-    { name: 'FAQ', href: '#' },
-    { name: 'Find a store', href: '#' },
-  ],
-}
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Fragment, useEffect, useState } from 'react'
 
 export default function Catalog() {
+
+  const sortOptions = [
+    { name: 'Most Popular', href: '#', current: true, sortBy: 'id', inc: true },
+    {
+      name: 'Best Rating',
+      href: '#',
+      current: false,
+      sortBy: 'rating',
+      inc: false,
+    },
+    { name: 'Newest', href: '#', current: false, sortBy: 'date', inc: false },
+    {
+      name: 'Price: Low to High',
+      href: '#',
+      current: false,
+      sortBy: 'price',
+      inc: true,
+    },
+    {
+      name: 'Price: High to Low',
+      href: '#',
+      current: false,
+      sortBy: '',
+      inc: false,
+    },
+  ]
+
+  const filters = [
+    {
+      id: 'category',
+      name: 'Category',
+      options: [
+        {
+          value: 'dry-cake',
+          label: 'Dry Cakes',
+          isEligible: (product) => {
+            return product.category === 'dry-cake'
+          },
+        },
+        {
+          value: 'cookie',
+          label: 'Cookies',
+          isEligible: (product) => {
+            return product.category === 'cookie'
+          },
+        },
+        {
+          value: 'energy-bar',
+          label: 'Energy Bars',
+          isEligible: (product) => {
+            return product.category === 'energy-bar'
+          },
+        },
+        {
+          value: 'biscuit',
+          label: 'Biscuits',
+          isEligible: (product) => {
+            return product.category === 'biscuit'
+          },
+        },
+      ],
+    },
+    {
+      id: 'price',
+      name: 'Price',
+      options: [
+        {
+          value: '0',
+          min: 0,
+          max: 300,
+          label: 'Under Rs. 300',
+          isEligible: (product) => {
+            return product.price <= 300
+          },
+        },
+        {
+          value: '300',
+          min: 300,
+          max: 400,
+          label: 'Rs. 300 - Rs. 400',
+          isEligible: (product) => {
+            return 300 < product.price && product.price <= 400
+          },
+        },
+        {
+          value: '400',
+          min: 400,
+          max: 500,
+          label: 'Rs. 400 - Rs. 500',
+          isEligible: (product) => {
+            return 400 < product.price && product.price <= 500
+          },
+        },
+        {
+          value: '500',
+          min: 500,
+          max: 600,
+          label: 'Rs. 500 - Rs. 600',
+          isEligible: (product) => {
+            return 500 < product.price && product.price <= 600
+          },
+        },
+        {
+          value: '600',
+          min: 600,
+          max: 700,
+          label: 'Rs. 600 - Rs. 700',
+          isEligible: (product) => {
+            return 600 < product.price && product.price <= 700
+          },
+        },
+        {
+          value: '700',
+          min: 700,
+          max: 100000,
+          label: 'Over Rs. 700',
+          isEligible: (product) => {
+            return 700 < product.price && product.price <= 100000
+          },
+        },
+      ],
+    },
+  ]
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-  updateFilterProducts();
+  const [activeFilters, setActiveFilterState] = useState([])
+  const [sortedOption, setSortedOption] = useState(sortOptions[0])
+  const [filteredProducts, setFilterProducts] = useState(products)
+
+  useEffect(() => {
+    updateFilterProducts()
+  }, [activeFilters, sortedOption])
+
+  function toggleFilter(e) {
+    const checked = e.target.checked
+    const id = e.target.value
+    if (checked) {
+      setActiveFilterState([...activeFilters, id])
+    } else {
+      setActiveFilterState(activeFilters.filter((_id) => _id !== id))
+    }
+  }
+
+  function updateFilterProducts() {
+    let filteredProds = products
+    filteredProds = filterByCategory(filteredProds)
+    filteredProds = filterByPrice(filteredProds)
+    // filteredProds = sortProducts(filteredProds)
+    console.log(filteredProds)
+    setFilterProducts(filteredProds)
+  }
+
+  function sortProducts(prods) {
+    prods = prods.sort((a, b) => {
+      if (sortedOption.sortBy === 'price') {
+        return a.price - b.price
+      } else if (sortedOption.sortBy === 'id') {
+        return a.id - b.id
+      } else if (sortedOption.sortBy === 'date') {
+        return new Date(a.date) - new Date(b.date)
+      } else if (sortedOption.sortBy === 'rating') {
+        return a.rating - b.rating
+      }
+    })
+    if (!sortedOption.inc) {
+      prods.reverse()
+    }
+    return prods
+  }
+
+  function filterByCategory(products) {
+    const activeCategoryFilters = filters[0].options.filter((option) =>
+      activeFilters.includes(option.value)
+    )
+    if (activeCategoryFilters.length === 0) {
+      return products
+    }
+    products = products.filter((product) => {
+      return activeFilters.includes(product.category)
+    })
+    return products
+  }
+
+  function filterByPrice(products) {
+    const activePriceFilters = filters[1].options.filter((option) =>
+      activeFilters.includes(option.value)
+    )
+    if (activePriceFilters.length === 0) {
+      return products
+    }
+    products = products.filter((product) => {
+      let result = false
+      activePriceFilters.forEach((filter) => {
+        if (filter.isEligible(product)) {
+          result = true
+        }
+      })
+      return result
+    })
+    return products
+  }
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
+
   return (
     <div className="bg-gray-50">
       <div>
@@ -285,38 +270,6 @@ export default function Catalog() {
                   <Tab.Group as="div" className="mt-2">
                     <div className="border-b border-gray-200"></div>
                   </Tab.Group>
-
-                  <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                    {navigation.pages.map((page) => (
-                      <div key={page.name} className="flow-root">
-                        <a
-                          href={page.href}
-                          className="-m-2 block p-2 font-medium text-gray-900"
-                        >
-                          {page.name}
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                    <div className="flow-root">
-                      <a
-                        href="#"
-                        className="-m-2 block p-2 font-medium text-gray-900"
-                      >
-                        Create an account
-                      </a>
-                    </div>
-                    <div className="flow-root">
-                      <a
-                        href="#"
-                        className="-m-2 block p-2 font-medium text-gray-900"
-                      >
-                        Sign in
-                      </a>
-                    </div>
-                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -332,59 +285,53 @@ export default function Catalog() {
                   <div className="flex h-16 items-center justify-between">
                     {/* Logo (lg+) */}
                     <div className="hidden lg:flex lg:items-center">
-                      <a href="#">
-                        <span className="sr-only">Your Company</span>
-                        <Logo className="mx-auto h-10 w-auto" />
+                      <a href="/">
+                        <div className="flex">
+                          <span className="sr-only">Your Company</span>
+                          <Logo className="mx-auto h-10 w-auto" />
+                          <h6 className="mx-3 max-w-2xl font-display text-2xl font-medium tracking-tight text-slate-900 2xl:text-2xl">
+                            7{' '}
+                            <span className="relative whitespace-nowrap text-orange-600">
+                              <svg
+                                aria-hidden="true"
+                                viewBox="0 0 418 42"
+                                className="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70"
+                                preserveAspectRatio="none"
+                              >
+                                <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
+                              </svg>
+                              <span className="relative">Islands </span>
+                            </span>
+                            Bakery
+                          </h6>
+                        </div>
                       </a>
                     </div>
                     {/* Mobile menu and search (lg-) */}
-                    <div className="flex flex-1 items-center lg:hidden">
-                      <button
-                        type="button"
-                        className="-ml-2 rounded-md bg-white p-2 text-gray-400"
-                        onClick={() => setMobileMenuOpen(true)}
-                      >
-                        <span className="sr-only">Open menu</span>
-                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                      </button>
-                    </div>
+                    <div className="flex flex-1 items-center lg:hidden"></div>
 
                     {/* Logo (lg-) */}
-                    <a href="#" className="lg:hidden">
-                      <span className="sr-only">Your Company</span>
-                      <img
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt=""
-                        className="h-8 w-auto"
-                      />
-                    </a>
-
-                    <div className="flex flex-1 items-center justify-end">
-                      <div className="flex items-center lg:ml-8">
-                        <span
-                          className="mx-4 h-6 w-px bg-gray-200 lg:mx-6"
-                          aria-hidden="true"
-                        />
-
-                        <div className="flow-root">
-                          <a
-                            href="#"
-                            className="group -m-2 flex items-center p-2"
-                          >
-                            <ShoppingCartIcon
-                              className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                    <a href="/" className="lg:hidden">
+                      <div className="flex">
+                        <h6 className="mx-3 max-w-2xl font-display text-2xl font-medium tracking-tight text-slate-900 2xl:text-2xl">
+                          7{' '}
+                          <span className="relative whitespace-nowrap text-orange-600">
+                            <svg
                               aria-hidden="true"
-                            />
-                            <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                              0
-                            </span>
-                            <span className="sr-only">
-                              items in cart, view bag
-                            </span>
-                          </a>
-                        </div>
+                              viewBox="0 0 418 42"
+                              className="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70"
+                              preserveAspectRatio="none"
+                            >
+                              <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
+                            </svg>
+                            <span className="relative">Islands </span>
+                          </span>
+                          Bakery
+                        </h6>
+                        <span className="sr-only">Your Company</span>
+                        <Logo className="mx-auto h-10 w-auto" />
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -474,14 +421,12 @@ export default function Catalog() {
                                     <input
                                       id={`filter-mobile-${section.id}-${optionIdx}`}
                                       name={`${section.id}[]`}
-                                      defaultValue={option.value}
                                       type="checkbox"
-                                      defaultChecked={option.checked}
-                                      onClick={updateFilter(
-                                        section.id,
-                                        option,
-                                        this
+                                      checked={activeFilters.includes(
+                                        option.value
                                       )}
+                                      value={option.value}
+                                      onChange={toggleFilter}
                                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                     />
                                     <label
@@ -506,8 +451,15 @@ export default function Catalog() {
         </Transition.Root>
 
         <main>
-          <div className="bg-white">
-            <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
+          <div className="bg-white pb-4">
+            <div
+              className="mx-auto py-16 px-4 sm:px-6 lg:px-20"
+              style={{
+                'background-image':
+                  'linear-gradient(to bottom, rgba(255,255,255,0.5),rgba(255,255,255,1)),url("/images/catalog-bg.webp")',
+                  'background-size': 'cover'
+              }}
+            >
               <h1 className="text-3xl font-bold tracking-tight text-gray-900">
                 Catalog
               </h1>
@@ -528,59 +480,6 @@ export default function Catalog() {
 
             <div className="border-b border-gray-200 bg-white pb-4">
               <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-                <Menu as="div" className="relative inline-block text-left">
-                  <div>
-                    <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                      Sort
-                      <ChevronDownIcon
-                        className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                        aria-hidden="true"
-                      />
-                    </Menu.Button>
-                  </div>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute left-0 z-10 mt-2 w-40 origin-top-left rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <div className="py-1">
-                        {sortOptions.map((option) => (
-                          <Menu.Item key={option.name}>
-                            {({ active }) => (
-                              <a
-                                href={option.href}
-                                onClick={() => {
-                                  Object.keys(sortOptions).forEach(
-                                    (optionKey) => {
-                                      sortOptions[optionKey].current = false
-                                    }
-                                  )
-                                  option.current = true
-                                }}
-                                className={classNames(
-                                  option.current
-                                    ? 'font-medium text-gray-900'
-                                    : 'text-gray-500',
-                                  active ? 'bg-gray-100' : '',
-                                  'block px-4 py-2 text-sm'
-                                )}
-                              >
-                                {option.name}
-                              </a>
-                            )}
-                          </Menu.Item>
-                        ))}
-                      </div>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-
                 <button
                   type="button"
                   className="inline-block text-sm font-medium text-gray-700 hover:text-gray-900 sm:hidden"
@@ -601,9 +500,11 @@ export default function Catalog() {
                             <span>{section.name}</span>
                             {sectionIdx === 0 ? (
                               <span className="ml-1.5 rounded bg-gray-200 py-0.5 px-1.5 text-xs font-semibold tabular-nums text-gray-700">
-                                {products.filter((product) => {
-                                  filters
-                                })}
+                                {
+                                  filters[0].options.filter((option) =>
+                                    activeFilters.includes(option.value)
+                                  ).length
+                                }
                               </span>
                             ) : null}
                             <ChevronDownIcon
@@ -631,9 +532,12 @@ export default function Catalog() {
                                     <input
                                       id={`filter-${section.id}-${optionIdx}`}
                                       name={`${section.id}[]`}
-                                      defaultValue={option.value}
                                       type="checkbox"
-                                      defaultChecked={option.checked}
+                                      checked={activeFilters.includes(
+                                        option.value
+                                      )}
+                                      value={option.value}
+                                      onChange={toggleFilter}
                                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                     />
                                     <label
@@ -670,34 +574,47 @@ export default function Catalog() {
 
                 <div className="mt-2 sm:mt-0 sm:ml-4">
                   <div className="-m-1 flex flex-wrap items-center">
-                    {activeFilters.map((activeFilter) => (
-                      <span
-                        key={activeFilter.value}
-                        className="m-1 inline-flex items-center rounded-full border border-gray-200 bg-white py-1.5 pl-3 pr-2 text-sm font-medium text-gray-900"
-                      >
-                        <span>{activeFilter.label}</span>
-                        <button
-                          type="button"
-                          className="ml-1 inline-flex h-4 w-4 flex-shrink-0 rounded-full p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-500"
+                    {activeFilters.map((activeFilterId) => {
+                      let activeFilter = []
+                        .concat(...filters.map((f) => f.options))
+                        .filter((option) => option.value === activeFilterId)
+                        .pop()
+                      return (
+                        <span
+                          key={activeFilter.value}
+                          className="m-1 inline-flex items-center rounded-full border border-gray-200 bg-white py-1.5 pl-3 pr-2 text-sm font-medium text-gray-900"
                         >
-                          <span className="sr-only">
-                            Remove filter for {activeFilter.label}
-                          </span>
-                          <svg
-                            className="h-2 w-2"
-                            stroke="currentColor"
-                            fill="none"
-                            viewBox="0 0 8 8"
+                          <span>{activeFilter.label}</span>
+                          <button
+                            type="button"
+                            className="ml-1 inline-flex h-4 w-4 flex-shrink-0 rounded-full p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-500"
+                            onClick={() => {
+                              setActiveFilterState(
+                                activeFilters.filter(
+                                  (id) => id !== activeFilterId
+                                )
+                              )
+                            }}
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeWidth="1.5"
-                              d="M1 1l6 6m0-6L1 7"
-                            />
-                          </svg>
-                        </button>
-                      </span>
-                    ))}
+                            <span className="sr-only">
+                              Remove filter for {activeFilter.label}
+                            </span>
+                            <svg
+                              className="h-2 w-2"
+                              stroke="currentColor"
+                              fill="none"
+                              viewBox="0 0 8 8"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeWidth="1.5"
+                                d="M1 1l6 6m0-6L1 7"
+                              />
+                            </svg>
+                          </button>
+                        </span>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
@@ -714,147 +631,34 @@ export default function Catalog() {
             </h2>
 
             <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-              {products.map((product) => 
-                  (
-                    <a key={product.id} href={product.href} className="group">
-                      <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-                        <img
-                          src={product.imageSrc}
-                          alt={product.imageAlt}
-                          className="h-full w-full object-cover object-center group-hover:opacity-75"
-                        />
-                      </div>
-                      <h3 className="mt-4 text-sm text-gray-700">
-                        {product.name}
-                      </h3>
-                      <p className="font-small mt-1 text-sm text-gray-500">
-                        {product.weight}gm
-                      </p>
-                      <p className="mt-1 text-lg font-medium text-gray-900">
-                        Rs. {product.price}
-                      </p>
-                    </a>
-                  )
-              )}
+              {filteredProducts.map((product) => {
+                console.log('products filtering triggered', product)
+                return (
+                  <a key={product.id} href={`/product/${product.id}`} className="group">
+                    <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                      <img
+                        src={product.imageSrc[0]}
+                        alt={product.imageAlt}
+                        className="h-full w-full object-cover object-center group-hover:opacity-75"
+                      />
+                    </div>
+                    <h3 className="mt-4 text-sm text-gray-700">
+                      {product.name}
+                    </h3>
+                    <p className="font-small mt-1 text-sm text-gray-500">
+                      {product.weight}gm
+                    </p>
+                    <p className="mt-1 text-lg font-medium text-gray-900">
+                      Rs. {product.price}
+                    </p>
+                  </a>
+                )
+              })}
             </div>
           </section>
         </main>
 
-        <footer
-          aria-labelledby="footer-heading"
-          className="border-t border-gray-200 bg-white"
-        >
-          <h2 id="footer-heading" className="sr-only">
-            Footer
-          </h2>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="py-20">
-              <div className="grid grid-cols-1 md:grid-flow-col md:auto-rows-min md:grid-cols-12 md:gap-x-8 md:gap-y-16">
-                {/* Image section */}
-                <div className="col-span-1 md:col-span-2 lg:col-start-1 lg:row-start-1">
-                  <img
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt=""
-                    className="h-8 w-auto"
-                  />
-                </div>
-
-                {/* Sitemap sections */}
-                <div className="col-span-6 mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-8 md:col-start-3 md:row-start-1 md:mt-0 lg:col-span-6 lg:col-start-2">
-                  <div className="grid grid-cols-1 gap-y-12 sm:col-span-2 sm:grid-cols-2 sm:gap-x-8">
-                    <div>
-                      <h3 className="text-sm font-medium text-gray-900">
-                        Products
-                      </h3>
-                      <ul role="list" className="mt-6 space-y-6">
-                        {footerNavigation.products.map((item) => (
-                          <li key={item.name} className="text-sm">
-                            <a
-                              href={item.href}
-                              className="text-gray-500 hover:text-gray-600"
-                            >
-                              {item.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-gray-900">
-                        Company
-                      </h3>
-                      <ul role="list" className="mt-6 space-y-6">
-                        {footerNavigation.company.map((item) => (
-                          <li key={item.name} className="text-sm">
-                            <a
-                              href={item.href}
-                              className="text-gray-500 hover:text-gray-600"
-                            >
-                              {item.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-900">
-                      Customer Service
-                    </h3>
-                    <ul role="list" className="mt-6 space-y-6">
-                      {footerNavigation.customerService.map((item) => (
-                        <li key={item.name} className="text-sm">
-                          <a
-                            href={item.href}
-                            className="text-gray-500 hover:text-gray-600"
-                          >
-                            {item.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Newsletter section */}
-                <div className="mt-12 md:col-span-8 md:col-start-3 md:row-start-2 md:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1">
-                  <h3 className="text-sm font-medium text-gray-900">
-                    Sign up for our newsletter
-                  </h3>
-                  <p className="mt-6 text-sm text-gray-500">
-                    The latest deals and savings, sent to your inbox weekly.
-                  </p>
-                  <form className="mt-2 flex sm:max-w-md">
-                    <label htmlFor="email-address" className="sr-only">
-                      Email address
-                    </label>
-                    <input
-                      id="email-address"
-                      type="text"
-                      autoComplete="email"
-                      required
-                      className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                    />
-                    <div className="ml-4 flex-shrink-0">
-                      <button
-                        type="submit"
-                        className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                      >
-                        Sign up
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-100 py-10 text-center">
-              <p className="text-sm text-gray-500">
-                &copy; 2021 Your Company, Inc. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer></Footer>
       </div>
     </div>
   )

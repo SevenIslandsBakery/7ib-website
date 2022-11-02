@@ -1,0 +1,162 @@
+[
+   {
+      "id": 1,
+      "name": "Earthen Bottle",
+      "price": 480,
+      "rating": 1.54,
+      "date": "10/5/22",
+      "weight": 450,
+      "category": "cookie",
+      "whatsappLink": "#",
+      "isBestSeller": true,
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+      ],
+      "imageAlt": "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+      "description": "The Basic tee is an honest new take on a classic. ",
+      "details": [
+         "Multiple strap configurations",
+         "Spacious interior with top zip",
+         "Leather handle and tabs",
+         "Interior dividers",
+         "Stainless strap loops",
+         "Double stitched construction",
+         "Water-resistant"
+      ]
+   },
+   {
+      "id": 2,
+      "name": "Nomad Tumbler",
+      "href": "/product/2",
+      "price": 350,
+      "rating": 2.54,
+      "date": "9/5/22",
+      "isBestSeller": true,
+      "weight": 430,
+      "category": "dry-cake",
+      "whatsappLink": "#",
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+      ],
+      "imageAlt": "Olive drab green insulated bottle with flared screw lid and flat top."
+   },
+   {
+      "id": 3,
+      "name": "Focus Paper Refill",
+      "href": "#",
+      "price": 890,
+      "rating": 3.54,
+      "date": "8/5/22",
+      "weight": 250,
+      "isBestSeller": true,
+      "category": "energy-bar",
+      "whatsappLink": "#",
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
+      ],
+      "imageAlt": "Person using a pen to cross a task off a productivity paper card."
+   },
+   {
+      "id": 4,
+      "name": "Machined Mechanical Pencil",
+      "href": "#",
+      "price": 350,
+      "rating": 4.54,
+      "date": "7/5/22",
+      "weight": 550,
+      "category": "cookie",
+      "whatsappLink": "#",
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
+      ],
+      "imageAlt": "Hand holding black machined steel mechanical pencil with brass tip and top."
+   },
+   {
+      "id": 5,
+      "name": "Earthen Bottle",
+      "href": "#",
+      "price": 480,
+      "rating": 3.24,
+      "date": "6/5/22",
+      "weight": 150,
+      "category": "dry-cake",
+      "whatsappLink": "#",
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+      ],
+      "imageAlt": "Tall slender porcelain bottle with natural clay textured body and cork stopper."
+   },
+   {
+      "id": 6,
+      "name": "Nomad Tumbler",
+      "href": "#",
+      "price": 350,
+      "rating": 1.34,
+      "date": "5/5/22",
+      "weight": 850,
+      "category": "energy-bar",
+      "whatsappLink": "#",
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+      ],
+      "imageAlt": "Olive drab green insulated bottle with flared screw lid and flat top."
+   },
+   {
+      "id": 7,
+      "name": "Focus Paper Refill",
+      "href": "#",
+      "price": 890,
+      "rating": 2.14,
+      "date": "4/5/22",
+      "weight": 650,
+      "category": "biscuit",
+      "whatsappLink": "#",
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg",
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
+      ],
+      "imageAlt": "Person using a pen to cross a task off a productivity paper card."
+   },
+   {
+      "id": 8,
+      "name": "Machined Mechanical Pencil",
+      "href": "#",
+      "price": 350,
+      "rating": 2.00,
+      "date": "3/5/22",
+      "weight": 750,
+      "category": "biscuit",
+      "whatsappLink": "#",
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
+      ],
+      "imageAlt": "Hand holding black machined steel mechanical pencil with brass tip and top."
+   },
+   {
+      "id": 9,
+      "name": "Earthen Bottle",
+      "href": "/product/1",
+      "price": 480,
+      "rating": 1.54,
+      "date": "10/5/22",
+      "weight": 450,
+      "category": "cookie",
+      "whatsappLink": "#",
+      "imageSrc": [
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
+         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+      ],
+      "imageAlt": "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+      "description": "<p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee it's own look.</p><p>Looking to stock your closet? The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.</p>",
+      "details": [
+         "Multiple strap configurations",
+         "Spacious interior with top zip",
+         "Leather handle and tabs",
+         "Interior dividers",
+         "Stainless strap loops",
+         "Double stitched construction",
+         "Water-resistant"
+      ]
+   }
+]

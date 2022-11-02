@@ -1,38 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-const products = [
-  {
-    id: 1,
-    name: 'Chocolate Cappucino Marble Cake',
-    href: '#',
-    price: 'Rs. 480',
-    description: 'Made with nutritious ingredients including all purpose flour, condensed milk and chocolate.',
-    options: '450gm',
-    imageSrc: '/images/bestsellers-1.png',
-    imageAlt: 'chocolatee cappucino marble cake',
-  },
-  {
-    id: 2,
-    name: 'Chocolate Mud Cake',
-    href: '#',
-    price: 'Rs. 390',
-    description: "An all time kid's favourite, this cake contains all purpose flour, chocolate, coffee and condensed milk.",
-    options: '375gm',
-    imageSrc: '/images/bestsellers-2.png',
-    imageAlt: 'chocolate mud cake',
-  },
-  {
-    id: 3,
-    name: 'GoodDay Biscuits',
-    href: '#',
-    price: 'Rs. 275',
-    description: 'Made with the goodness of cashews, pistachios, unsalted butter and all purpose flour.',
-    options: '270gm ',
-    imageSrc: '/images/bestsellers-3.png',
-    imageAlt: 'Front of plain black t-shirt.',
-  }
-]
+
+import productList from '@/products/products.json'
+import { useEffect, useState } from 'react'
+
 
 export function BestSellers() {
+  let [products,setProducts] = useState([])
+
+  useEffect(()=>{
+    let newProducts = productList.filter(prod=>prod.isBestSeller);
+    console.log(newProducts);
+    if(newProducts.length>3){
+      newProducts.splice(3);
+    }
+    setProducts(newProducts);
+  },[])
+
   return (
     <div id="bestsellers" className="bg-gray-900">
       <div className="px-4 pt-12 sm:px-6 lg:px-8 lg:pt-20">
@@ -56,7 +39,7 @@ export function BestSellers() {
           <div className="absolute inset-0 h-5/6 bg-gray-900 lg:h-2/3" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="relative lg:grid lg:grid-cols-7 lg:grid-rows-1">
-            <div className="bg-white mx-auto max-w-md lg:col-start-1 lg:col-end-8 lg:row-start-1 lg:row-end-1  lg:mx-0 lg:max-w-none">
+            <div className="bg-white mx-auto lg:col-start-1 lg:col-end-8 lg:row-start-1 lg:row-end-1  lg:mx-0 lg:max-w-none">
                 <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                   <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
                     {products.map((product) => (
@@ -66,14 +49,14 @@ export function BestSellers() {
                       >
                         <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
                           <img
-                            src={product.imageSrc}
+                            src={product.imageSrc[0]}
                             alt={product.imageAlt}
                             className="h-full w-full object-cover object-center sm:h-full sm:w-full"
                           />
                         </div>
                         <div className="flex flex-1 flex-col space-y-2 p-4">
                           <h3 className="text-sm font-medium text-gray-900">
-                            <a href={product.href}>
+                            <a href={'/product/'+product.id}>
                               <span
                                 aria-hidden="true"
                                 className="absolute inset-0"
@@ -81,15 +64,13 @@ export function BestSellers() {
                               {product.name}
                             </a>
                           </h3>
-                          <p className="text-sm text-gray-500">
-                            {product.description}
-                          </p>
+                         
                           <div className="flex flex-1 flex-col justify-end">
                             <p className="text-sm italic text-gray-500">
-                              {product.options}
+                              {product.weight} gms
                             </p>
                             <p className="text-base font-medium text-gray-900">
-                              {product.price}
+                              Rs. {product.price}
                             </p>
                           </div>
                         </div>

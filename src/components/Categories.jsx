@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 export function Categories() {
     return (
@@ -5,7 +6,7 @@ export function Categories() {
         <div className="mx-auto max-w-7xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div className="sm:flex sm:items-baseline sm:justify-between">
             <h2 className="text-2xl font-bold tracking-tight text-gray-900">Shop by Category</h2>
-            <a href="#" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+            <a href="/catalog" className="hidden text-sm font-semibold text-orange-600 hover:text-orange-500 sm:block">
               Browse all categories
               <span aria-hidden="true"> &rarr;</span>
             </a>
@@ -22,7 +23,7 @@ export function Categories() {
               <div className="flex items-end p-6">
                 <div>
                   <h3 className="font-semibold text-white">
-                    <a href="#">
+                    <a href="/catalog">
                       <span className="absolute inset-0" />
                       Cookies
                     </a>
@@ -46,7 +47,7 @@ export function Categories() {
               <div className="flex items-end p-6 sm:absolute sm:inset-0">
                 <div>
                   <h3 className="font-semibold text-white">
-                    <a href="#">
+                    <a href="/catalog">
                       <span className="absolute inset-0" />
                       Dry Cakes
                     </a>
@@ -70,7 +71,7 @@ export function Categories() {
               <div className="flex items-end p-6 sm:absolute sm:inset-0">
                 <div>
                   <h3 className="font-semibold text-white">
-                    <a href="#">
+                    <a href="/catalog">
                       <span className="absolute inset-0" />
                       Energy Bars
                     </a>
@@ -84,7 +85,7 @@ export function Categories() {
           </div>
   
           <div className="mt-6 sm:hidden">
-            <a href="#" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+            <a href="#" className="block text-sm font-semibold text-orange-600 hover:text-orange-500">
               Browse all categories
               <span aria-hidden="true"> &rarr;</span>
             </a>

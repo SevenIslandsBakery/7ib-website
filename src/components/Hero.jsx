@@ -1,24 +1,19 @@
-import Image from 'next/future/image'
-
 import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import logoLaravel from '@/images/logos/laravel.svg'
-import logoMirage from '@/images/logos/mirage.svg'
-import logoStatamic from '@/images/logos/statamic.svg'
-import logoStaticKit from '@/images/logos/statickit.svg'
-import logoTransistor from '@/images/logos/transistor.svg'
-import logoTuple from '@/images/logos/tuple.svg'
-import avatar1 from '@/images/avatars/avatar-1.png'
-import avatar2 from '@/images/avatars/avatar-2.png'
-import avatar3 from '@/images/avatars/avatar-3.png'
-import Carousel from './Carousel'
+import { Container as div } from '@/components/Container'
 
 export function Hero() {
   return (
-    <Container className="pt-20 pb-16 text-center lg:pt-32 h-[86vh]">
+    <div
+      className="h-[86vh] w-full pt-20 pb-16 text-center lg:pt-32"
+      style={{
+        'background-image':
+          'linear-gradient(to top, rgba(255,255,255,0.5),rgba(255,255,255,1)),url("/images/catalog-bg.webp")',
+        'background-size': 'cover',
+      }}
+    >
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
         7{' '}
-        <span className="relative whitespace-nowrap text-blue-600">
+        <span className="relative whitespace-nowrap text-orange-600">
           <svg
             aria-hidden="true"
             viewBox="0 0 418 42"
@@ -36,11 +31,18 @@ export function Hero() {
         without compromising on health or taste!
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/register">Get in touch</Button>
-        <Button href="/catalog" variant="outline">
+        <Button href={'https://wa.me/c/919967551778'} target="_blank">
+          Get in touch
+        </Button>
+        <Button
+          href="/catalog"
+          variant="outline"
+          color="slate"
+          className="ring-gray-800"
+        >
           <span>Shop Now</span>
         </Button>
       </div>
-    </Container>
+    </div>
   )
 }
