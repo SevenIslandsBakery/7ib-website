@@ -1,162 +1,908 @@
 [
    {
       "id": 1,
-      "name": "Earthen Bottle Hehehe",
-      "price": 480,
-      "rating": 1.54,
-      "date": "10/5/22",
-      "weight": 450,
+      "name": "Nutty Crunchy Cookies",
+      "price": 300,
+      "rating": 5,
+      "date": "4/11/22",
+      "weight": 250,
       "category": "cookie",
-      "whatsappLink": "#",
+      "whatsappLink": "https://wa.me/p/3736676649772083/919967551778",
       "isBestSeller": true,
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+         "/images/products/1a.png"
       ],
-      "imageAlt": "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-      "description": "The Basic tee is an honest new take on a classic. ",
+      "imageAlt": "Nutty Crunchy Cookies",
+      "description": "These nutty crunchy cookies are our homemade bestseller. Made with natural ingredients, it won't take a toll on your health.",
       "details": [
-         "Multiple strap configurations",
-         "Spacious interior with top zip",
-         "Leather handle and tabs",
-         "Interior dividers",
-         "Stainless strap loops",
-         "Double stitched construction",
-         "Water-resistant"
+         "All Purpose Flour",
+         "Pista",
+         "Coconut and almonds",
+         "Unsalted Butter"
       ]
    },
    {
       "id": 2,
-      "name": "Nomad Tumbler",
+      "name": "Almonds Pistachios Biscuits",
       "href": "/product/2",
-      "price": 350,
-      "rating": 2.54,
-      "date": "9/5/22",
+      "price": 325,
+      "rating": 5,
+      "date": "4/11/22",
       "isBestSeller": true,
-      "weight": 430,
-      "category": "dry-cake",
-      "whatsappLink": "#",
+      "weight": 350,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/4438652986166678/919967551778",
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+         "/images/products/2a.png"
       ],
-      "imageAlt": "Olive drab green insulated bottle with flared screw lid and flat top."
+      "imageAlt": "Almonds Pistachios Biscuits",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Almonds",
+         "Pistachios"
+      ]
    },
    {
       "id": 3,
-      "name": "Focus Paper Refill",
-      "href": "#",
-      "price": 890,
-      "rating": 3.54,
-      "date": "8/5/22",
-      "weight": 250,
+      "name": "Whole Wheat Jaggery Cake",
+      "price": 360,
+      "rating": 5,
+      "date": "4/11/22",
+      "weight": 375,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4559071524103118/919967551778",
       "isBestSeller": true,
-      "category": "energy-bar",
-      "whatsappLink": "#",
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
+         "/images/products/3a.png"
       ],
-      "imageAlt": "Person using a pen to cross a task off a productivity paper card."
+      "imageAlt": "Whole Wheat Jaggery Cake",
+      "description": "",
+      "details": [
+         "Whole wheat",
+         "Jaggery",
+         "Almonds",
+         "Cashews"
+      ]
    },
    {
       "id": 4,
-      "name": "Machined Mechanical Pencil",
-      "href": "#",
-      "price": 350,
-      "rating": 4.54,
-      "date": "7/5/22",
-      "weight": 550,
-      "category": "cookie",
-      "whatsappLink": "#",
+      "name": "Rich Coffee Almond Cake",
+      "price": 495,
+      "rating": 5,
+      "date": "4/11/22",
+      "weight": 500,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4871577406203904/919967551778",
+      "isBestSeller": true,
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
+         "/images/products/4a.png"
       ],
-      "imageAlt": "Hand holding black machined steel mechanical pencil with brass tip and top."
+      "imageAlt": "Rich Coffee Almond Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Almomds",
+         "Coffee Essence"
+      ]
    },
    {
       "id": 5,
-      "name": "Earthen Bottle",
-      "href": "#",
-      "price": 480,
-      "rating": 3.24,
-      "date": "6/5/22",
-      "weight": 150,
+      "name": "Pina Colada Dry fruit Cake",
+      "price": 450,
+      "rating": 5,
+      "date": "4/11/22",
+      "weight": 500,
       "category": "dry-cake",
-      "whatsappLink": "#",
+      "whatsappLink": "https://wa.me/p/5101866789877943/919967551778",
+      "isBestSeller": false,
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+         "/images/products/5a.png"
       ],
-      "imageAlt": "Tall slender porcelain bottle with natural clay textured body and cork stopper."
+      "imageAlt": "Pina Colada Dry fruit Cake",
+      "description": "",
+      "details": [
+         "Butter",
+         "Dessicated Coconut",
+         "Pineapple Crush",
+         "Coconut Cream powder",
+         "Milk",
+         "Condensed Milk"
+      ]
    },
    {
       "id": 6,
-      "name": "Nomad Tumbler",
-      "href": "#",
-      "price": 350,
-      "rating": 1.34,
-      "date": "5/5/22",
-      "weight": 850,
-      "category": "energy-bar",
-      "whatsappLink": "#",
+      "name": "Desi Ghee Nankhatai",
+      "price": 306,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 340,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/5739395742797152/919967551778",
+      "isBestSeller": false,
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+         "/images/products/6a.png"
       ],
-      "imageAlt": "Olive drab green insulated bottle with flared screw lid and flat top."
+      "imageAlt": "Desi Ghee Nankhatai",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Pistachios"
+      ]
    },
    {
       "id": 7,
-      "name": "Focus Paper Refill",
-      "href": "#",
-      "price": 890,
-      "rating": 2.14,
-      "date": "4/5/22",
-      "weight": 650,
-      "category": "biscuit",
-      "whatsappLink": "#",
+      "name": "Marble Cake",
+      "price": 420,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 480,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/5739395742797152/919967551778",
+      "isBestSeller": false,
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg",
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
+         "/images/products/7a.png"
       ],
-      "imageAlt": "Person using a pen to cross a task off a productivity paper card."
+      "imageAlt": "Marble Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Unsalted Butter",
+         "Chocolate"
+      ]
    },
    {
       "id": 8,
-      "name": "Machined Mechanical Pencil",
-      "href": "#",
-      "price": 350,
-      "rating": 2.00,
-      "date": "3/5/22",
-      "weight": 750,
-      "category": "biscuit",
-      "whatsappLink": "#",
+      "name": "Dates And Walnut Cake",
+      "price": 500,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 580,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/6077783302261890/919967551778",
+      "isBestSeller": false,
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
+         "/images/products/8a.png"
       ],
-      "imageAlt": "Hand holding black machined steel mechanical pencil with brass tip and top."
+      "imageAlt": "Dates And Walnut Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Walnuts",
+         "Dates",
+         "Condensed Milk"
+      ]
    },
    {
       "id": 9,
-      "name": "Earthen Bottle",
-      "href": "/product/1",
-      "price": 480,
-      "rating": 1.54,
-      "date": "10/5/22",
-      "weight": 450,
+      "name": "Finger Almonds Cookies",
+      "price": 235,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 170,
       "category": "cookie",
-      "whatsappLink": "#",
+      "whatsappLink": "https://wa.me/p/5129388303854437/919967551778",
+      "isBestSeller": false,
       "imageSrc": [
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg",
-         "https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+         "/images/products/9a.png"
       ],
-      "imageAlt": "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-      "description": "<p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee it's own look.</p><p>Looking to stock your closet? The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.</p>",
+      "imageAlt": "Finger Almonds Cookies",
+      "description": "",
       "details": [
-         "Multiple strap configurations",
-         "Spacious interior with top zip",
-         "Leather handle and tabs",
-         "Interior dividers",
-         "Stainless strap loops",
-         "Double stitched construction",
-         "Water-resistant"
+         "Almomds",
+         "Desi Ghee",
+         "Butter",
+         "Almomds",
+         "Whole wheat",
+         "Flour"
+      ]
+   },
+   {
+      "id": 10,
+      "name": "Cashew Cookies in Desi ghee",
+      "price": 220,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 170,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/5443901532392779/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/10a.png"
+      ],
+      "imageAlt": "Cashew Cookies in Desi ghee",
+      "description": "",
+      "details": [
+         "Maida",
+         "Cashews",
+         "Desi Ghee"
+      ]
+   },
+   {
+      "id": 11,
+      "name": "Coconut Cookies",
+      "price": 270,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/4359389577456578/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/11a.png"
+      ],
+      "imageAlt": "Coconut Cookies",
+      "description": "",
+      "details": [
+         "Maida",
+         "Cashews",
+         "Desi Ghee"
+      ]
+   },
+   {
+      "id": 12,
+      "name": "Rava Almonds Cake",
+      "price": 395,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 600,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4305291462842291/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/12a.png"
+      ],
+      "imageAlt": "Rava Almonds Cake",
+      "description": "",
+      "details": [
+         "Rava",
+         "Almond",
+         "Curd",
+         "Condensed Milk"
+      ]
+   },
+   {
+      "id": 13,
+      "name": "Anjeer Almond Cake",
+      "price": 495,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 500,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4128393080570236/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/13a.png"
+      ],
+      "imageAlt": "Anjeer Almond Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Anjeer",
+         "Almond",
+         "Condensed Milk"
+      ]
+   },
+   {
+      "id": 14,
+      "name": "Rasmalai Cookies",
+      "price": 300,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 300,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/4078319228941943/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/14a.png"
+      ],
+      "imageAlt": "Rasmalai Cookies",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Rasmalai Essence",
+         "Kesar and Unsalted Butter"
+      ]
+   },
+   {
+      "id": 15,
+      "name": "Ragi Dates And Jaggery Healthy Cookies",
+      "price": 240,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/4078319228941943/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/15a.png"
+      ],
+      "imageAlt": "Ragi Dates And Jaggery Healthy Cookies",
+      "description": "",
+      "details": [
+         "Ragi",
+         "Jaggery",
+         "Dates",
+         "Desi Ghee"
+      ]
+   },
+   {
+      "id": 16,
+      "name": "Granola Energy Bar",
+      "price": 440,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 400,
+      "category": "energy-bar",
+      "whatsappLink": "https://wa.me/p/4093096574134476/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/16a.png",
+         "/images/products/16b.png",
+         "/images/products/16c.png",
+         "/images/products/16d.png"
+      ],
+      "imageAlt": "Granola Energy Bar",
+      "description": "",
+      "details": [
+         "Ragi",
+         "Jaggery",
+         "Dates",
+         "Desi Ghee"
+      ]
+   },
+   {
+      "id": 17,
+      "name": "Coffee Almonds Biscotti",
+      "price": 360,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 300,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/4146582648711589/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/17a.png",
+         "/images/products/17b.png"
+      ],
+      "imageAlt": "Coffee Almonds Biscotti",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Coffee",
+         "Choco chips",
+         "Unsalted Butter"
+      ]
+   },
+   {
+      "id": 18,
+      "name": "Shrewsbury Cookies",
+      "price": 324,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 340,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/4859117274151037/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/18a.png"
+      ],
+      "imageAlt": "Shrewsbury Cookies",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "White butter"
+      ]
+   },
+   {
+      "id": 19,
+      "name": "Tutti Fruti Biscuits",
+      "price": 240,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/4070214976398684/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/19a.png"
+      ],
+      "imageAlt": "Tutti Fruti Biscuits",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "White butter",
+         "Tutti Fruti Essence",
+         "Pineapple Essence"
+      ]
+   },
+   {
+      "id": 20,
+      "name": "Marble Cookies",
+      "price": 270,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 280,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/4047744651947187/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/20a.png"
+      ],
+      "imageAlt": "Marble Cookies",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Chocolate",
+         "Vanilla Essence",
+         "Unsalted Butter"
+      ]
+   },
+   {
+      "id": 21,
+      "name": "Mix Dry Fruit Jaggery Cake",
+      "price": 500,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 475,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/3914674045299135/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/21a.png"
+      ],
+      "imageAlt": "Mix Dry Fruit Jaggery Cake",
+      "description": "",
+      "details": [
+         "Whole wheat",
+         "Jaggery",
+         "Dates",
+         "Fig",
+         "Almomds",
+         "Cashews",
+         "Raisins",
+         "Walnuts"
+      ]
+   },
+   {
+      "id": 22,
+      "name": "Rose Pistachios Cake",
+      "price": 420,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 400,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4530219253678750/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/22a.png"
+      ],
+      "imageAlt": "Rose Pistachios Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Unsalted Butter",
+         "Rose Syrup",
+         "Pistachios"
+      ]
+   },
+   {
+      "id": 23,
+      "name": "Chocolate Mud Cake",
+      "price": 390,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 375,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/3986794654782296/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/23a.png"
+      ],
+      "imageAlt": "Chocolate Mud Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Coffee",
+         "Condensed Milk"
+      ]
+   },
+   {
+      "id": 24,
+      "name": "Chocolate Cappuccino Marble Cake",
+      "price": 480,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 450,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/3901381533324859/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/24a.png"
+      ],
+      "imageAlt": "Chocolate Cappuccino Marble Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Condensed Milk",
+         "Chocolate"
+      ]
+   },
+   {
+      "id": 25,
+      "name": "Rose Nuts Blondie",
+      "price": 500,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 200,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/5095235360605078/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/25a.png"
+      ],
+      "imageAlt": "Rose Nuts Blondie",
+      "description": "",
+      "details": [
+         "White Chocolate",
+         "Condensed Milk",
+         "Butter",
+         "Cashews",
+         "Almomds"
+      ]
+   },
+   {
+      "id": 26,
+      "name": "Eggless Chocolate Walnut Brownie",
+      "price": 400,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/7978563502168780/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/26a.png"
+      ],
+      "imageAlt": "Eggless Chocolate Walnut Brownie",
+      "description": "",
+      "details": [
+         "Dark Chocolate",
+         "Condensed Milk",
+         "Walnuts"
+      ]
+   },
+   {
+      "id": 27,
+      "name": "Rose Pistachios Biscotti",
+      "price": 250,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/4858713960893255/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/27a.png"
+      ],
+      "imageAlt": "Rose Pistachios Biscotti",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Pista",
+         "Rose Syrup",
+         "Unsalted Butter",
+         "Almonds"
+      ]
+   },
+   {
+      "id": 28,
+      "name": "Whole wheat Oats Biscotti",
+      "price": 250,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 200,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/7460488327325374/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/28a.png"
+      ],
+      "imageAlt": "Whole wheat Oats Biscotti",
+      "description": "",
+      "details": [
+         "Cranberry",
+         "Pistachios",
+         "Almomds",
+         "Cashews",
+         "Walnuts"
+      ]
+   },
+   {
+      "id": 29,
+      "name": "Pistachios Rasmalai Cake",
+      "price": 520,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 410,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/5485500588143298/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/29a.png"
+      ],
+      "imageAlt": "Pistachios Rasmalai Cake",
+      "description": "",
+      "details": [
+         "Rasmalai Pieces",
+         "Rasmalai Milk",
+         "Pistachios",
+         "Butter",
+         "Condensed Milk",
+         "Rasmalai Essence"
+      ]
+   },
+   {
+      "id": 30,
+      "name": "Herbs And Pepper Biscuits",
+      "price": 280,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 320,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/4514880738525053/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/30a.png"
+      ],
+      "imageAlt": "Herbs And Pepper Biscuits",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Butter",
+         "Oregano",
+         "Black Pepper"
+      ]
+   },
+   {
+      "id": 31,
+      "name": "Oats And Cranberries Cookies",
+      "price": 374,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 340,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/5685565841514332/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/31a.png"
+      ],
+      "imageAlt": "Oats And Cranberries Cookies",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Cranberries",
+         "Oats",
+         "Condensed Milk"
+      ]
+   },
+   {
+      "id": 32,
+      "name": "Mix Dry Fruit Cookies",
+      "price": 225,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/4258997440820656/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/32a.png"
+      ],
+      "imageAlt": "Mix Dry Fruit Cookies",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Butter",
+         "Almonds",
+         "Cashews",
+         "Pistachios",
+         "Elachi Powder"
+      ]
+   },
+   {
+      "id": 33,
+      "name": "GoodDay Biscuits",
+      "price": 275,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/3572716829498729/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/33a.png"
+      ],
+      "imageAlt": "GoodDay Biscuits",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Unsalted Butter",
+         "Cashews",
+         "Pistachios"
+      ]
+   },
+   {
+      "id": 34,
+      "name": "Madeleine Cup Cakes",
+      "price": 360,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 100,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4180579252032564/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/34a.png"
+      ],
+      "imageAlt": "Madeleine Cup Cakes",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Condensed Milk",
+         "Coconut",
+         "Mix Fruit Jam"
+      ]
+   },
+   {
+      "id": 35,
+      "name": "Kaju Pista Biscuit",
+      "price": 300,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "biscuit",
+      "whatsappLink": "https://wa.me/p/4934272386599581/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/35a.png"
+      ],
+      "imageAlt": "Kaju Pista Biscuit",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Cashews",
+         "Pistachios"
+      ]
+   },
+   {
+      "id": 36,
+      "name": "Wheat Jaggery Almond Cookies",
+      "price": 275,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 250,
+      "category": "cookie",
+      "whatsappLink": "https://wa.me/p/6137506609607957/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/36a.png"
+      ],
+      "imageAlt": "Wheat Jaggery Almond Cookies",
+      "description": "",
+      "details": [
+         "Whole wheat",
+         "Jaggery",
+         "Almonds",
+         "Desi Ghee"
+      ]
+   },
+   {
+      "id": 37,
+      "name": "Raggi Whole Wheat Cake",
+      "price": 380,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 700,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/5751409318266430/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/37a.png"
+      ],
+      "imageAlt": "Raggi Whole Wheat Cake",
+      "description": "",
+      "details": [
+         "Raggi",
+         "Whole Wheat",
+         "Jaggery",
+         "Almonds",
+         "Cashews"
+      ]
+   },
+   {
+      "id": 38,
+      "name": "Chocolate Walnut Cake",
+      "price": 480,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 500,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4290550387632641/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/38a.png"
+      ],
+      "imageAlt": "Chocolate Walnut Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Chocolate",
+         "Walnuts"
+      ]
+   },
+   {
+      "id": 39,
+      "name": "Vanilla Strawberry Cake",
+      "price": 350,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 500,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4103747566346737/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/39a.png"
+      ],
+      "imageAlt": "Vanilla Strawberry Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Vanilla Essence",
+         "Condensed Milk"
+      ]
+   },
+   {
+      "id": 40,
+      "name": "Dry Fruits Mawa Cake",
+      "price": 500,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 500,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4452692658087770/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/40a.png"
+      ],
+      "imageAlt": "Dry Fruits Mawa Cake",
+      "description": "",
+      "details": [
+         "All Purpose Flour",
+         "Mawa",
+         "Dry fruits",
+         "Condensed Milk"
+      ]
+   },
+   {
+      "id": 41,
+      "name": "Vanilla Muffins",
+      "price": 250,
+      "rating": 4,
+      "date": "4/11/22",
+      "weight": 600,
+      "category": "dry-cake",
+      "whatsappLink": "https://wa.me/p/4521255481218167/919967551778",
+      "isBestSeller": false,
+      "imageSrc": [
+         "/images/products/41a.png"
+      ],
+      "imageAlt": "Vanilla Muffins",
+      "description": "One order contains 12 peices",
+      "details": [
+         "All Purpose Flour",
+         "Condensed Milk",
+         "Vanilla Essence"
       ]
    }
 ]
