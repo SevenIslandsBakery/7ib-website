@@ -11,7 +11,7 @@ const testimonials = [
   [
     {
       content:
-        '7 Islands Bakery is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.',
+        'Cookies are awesome, superb and tasty. Please open a shop soon, where we can go anytime and buy your cookies.',
       author: {
         name: 'Sheryl Berge',
         role: 'CEO at Lynch LLC',
@@ -20,7 +20,7 @@ const testimonials = [
     },
     {
       content:
-        'I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are saying it has something to do with my books. Please get back to me right away.',
+        'My folks loved the flavour of pistachios in cake actually. Your naan khatayis are just scrumptious.',
       author: {
         name: 'Amy Hahn',
         role: 'Director at Velocity Industries',
@@ -31,7 +31,7 @@ const testimonials = [
   [
     {
       content:
-        'The best part about 7 Islands Bakery is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.',
+        'To the best healthy cake bakery ever, thanks a ton for yet another batch of yummy cake.',
       author: {
         name: 'Leland Kiehn',
         role: 'Founder of Kiehn and Sons',
@@ -40,7 +40,7 @@ const testimonials = [
     },
     {
       content:
-        'There are so many things I had to do with my old software that I just don’t do at all with 7 Islands Bakery. Suspicious but I can’t say I don’t love it.',
+        'My husband as gone mad over eating the Naan Khatayis. He says these are the best he has eaten till date.',
       author: {
         name: 'Erin Powlowski',
         role: 'COO at Armstrong Inc',
@@ -51,7 +51,7 @@ const testimonials = [
   [
     {
       content:
-        'I used to have to remit tax to the EU and with 7 Islands Bakery I somehow don’t have to do that anymore. Nervous to travel there now though.',
+        'Almond fingers were too good. So soft, they just melt in mouth. We all loved it.',
       author: {
         name: 'Peter Renolds',
         role: 'Founder of West Inc',
@@ -60,7 +60,7 @@ const testimonials = [
     },
     {
       content:
-        'This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax fraud. Please answer your damn emails, this is important.',
+        'Brownie went all the way to America and became blondie, just instead of cocoa white chocolate was used. It was really tasty. A new item for all of us.',
       author: {
         name: 'Amy Hahn',
         role: 'Director at Velocity Industries',
@@ -112,7 +112,7 @@ export function Testimonials() {
                           {testimonial.content}
                         </p>
                       </blockquote>
-                      <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+                      {/* <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
                         <div>
                           <div className="font-display text-base text-slate-900">
                             {testimonial.author.name}
@@ -130,7 +130,7 @@ export function Testimonials() {
                             height={56}
                           />
                         </div>
-                      </figcaption>
+                      </figcaption> */}
                     </figure>
                   </li>
                 ))}
