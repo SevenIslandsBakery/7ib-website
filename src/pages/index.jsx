@@ -21,7 +21,7 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited."
+          content="Your friendly neighbourhood bakery is here to satisfy your cravings without compromising on health or taste!"
         />
       </Head>
       
