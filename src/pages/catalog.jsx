@@ -16,9 +16,9 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Catalog() {
-
   const sortOptions = [
     { name: 'Most Popular', href: '#', current: true, sortBy: 'id', inc: true },
     {
@@ -147,6 +147,16 @@ export default function Catalog() {
   const [activeFilters, setActiveFilterState] = useState([])
   const [sortedOption, setSortedOption] = useState(sortOptions[0])
   const [filteredProducts, setFilterProducts] = useState(products)
+  const router = useRouter()
+
+  useEffect(() => {
+    console.log(router)
+    if(router.isReady){
+      if(router.query.category){
+        setActiveFilterState([router.query.category])
+      }
+    }
+  }, [router])
 
   useEffect(() => {
     updateFilterProducts()
@@ -397,14 +407,14 @@ export default function Catalog() {
               className="mx-auto py-16 px-4 sm:px-6 lg:px-20"
               style={{
                 'background-image':
-                  'linear-gradient(to bottom, rgba(255,255,255,0.5),rgba(255,255,255,1)),url("/images/catalog-bg.webp")',
-                  'background-size': 'cover'
+                  'linear-gradient(to bottom, rgba(255,255,255,0.7),rgba(255,255,255,1)),url("/images/catalog-bg.jpeg")',
+                'background-size': 'cover',
               }}
             >
               <h1 className="text-3xl font-bold tracking-tight text-gray-900">
                 Catalog
               </h1>
-              <p className="mt-4 max-w-xl text-sm text-gray-700">
+              <p className="mt-4 max-w-xl text-sm font-semibold text-gray-700">
                 Our thoughtfully designed menu of bakeries is crafted with love
                 and warmth. Relish your taste buds and choose for your special
                 ones before we run out. Currently we are only taking orders on
@@ -575,7 +585,11 @@ export default function Catalog() {
               {filteredProducts.map((product) => {
                 console.log('products filtering triggered', product)
                 return (
-                  <a key={product.id} href={`/product/${product.id}`} className="group">
+                  <a
+                    key={product.id}
+                    href={`/product/${product.id}`}
+                    className="group"
+                  >
                     <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                       <img
                         src={product.imageSrc[0]}

@@ -23,7 +23,7 @@ export function Categories() {
               <div className="flex items-end p-6">
                 <div>
                   <h3 className="font-semibold text-white">
-                    <a href="/catalog">
+                    <a href="/catalog?category=cookie">
                       <span className="absolute inset-0" />
                       Cookies
                     </a>
@@ -47,7 +47,7 @@ export function Categories() {
               <div className="flex items-end p-6 sm:absolute sm:inset-0">
                 <div>
                   <h3 className="font-semibold text-white">
-                    <a href="/catalog">
+                    <a href="/catalog?category=dry-cake">
                       <span className="absolute inset-0" />
                       Dry Cakes
                     </a>
@@ -71,7 +71,7 @@ export function Categories() {
               <div className="flex items-end p-6 sm:absolute sm:inset-0">
                 <div>
                   <h3 className="font-semibold text-white">
-                    <a href="/catalog">
+                    <a href="/catalog?category=energy-bar">
                       <span className="absolute inset-0" />
                       Energy Bars
                     </a>

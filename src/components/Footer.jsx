@@ -51,7 +51,7 @@ export function Footer() {
 
   return (
     <footer className="bg-white">
-      <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
         <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"
@@ -79,9 +79,16 @@ export function Footer() {
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2022 7 Islands Bakery, Inc. All rights reserved.
-        </p>
+        <div className="flex relative flex-col items-center md:flex-row">
+          <span className="mx-auto mt-8 text-center text-base text-gray-400">
+            &copy; 2022 7 Islands Bakery, Inc. All rights reserved.
+          </span>
+          <img
+            src="/images/fssai.png"
+            alt=""
+            className="md:absolute w-20 right-0 top-6 mt-5 md:mt-0"
+          />
+        </div>
       </div>
     </footer>
   )

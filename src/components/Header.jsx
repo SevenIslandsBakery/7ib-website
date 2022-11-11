@@ -82,7 +82,6 @@ function MobileNavigation() {
             <MobileNavLink href="#aboutus">About Us</MobileNavLink>
             <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
             <MobileNavLink href="#meetthechef">Meet the Chef</MobileNavLink>
-            <hr className="m-2 border-slate-300/40" />
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>

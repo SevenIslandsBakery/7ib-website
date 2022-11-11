@@ -33,7 +33,7 @@ export function MeetTheChef() {
               <div className="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
                 <img
                   className="rounded-3xl object-cover object-center shadow-2xl"
-                  src="https://images.unsplash.com/photo-1507207611509-ec012433ff52?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80"
+                  src="/images/chef.jpeg"
                   alt=""
                 />
               </div>
@@ -90,7 +90,7 @@ export function MeetTheChef() {
                 A homemaker and mother with a graduate degree in Commerce, Chandni Kapoor
                 got the idea of starting her own baking venture from her love for
                 cookies and memories of so many pleasant evenings spent in the
-                company of cookies and tea. She loves spending time with her children and her favourite movie is Forrest Gump. 
+                company of cookies and tea. She loves spending time with her children and her favourite movie is Dilwale Dulhania Le Jayenge. 
               </p>
             </div>
           </div>

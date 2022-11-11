@@ -4,13 +4,15 @@ import { Container as div } from '@/components/Container'
 export function Hero() {
   return (
     <div
-      className="h-[86vh] w-full pt-20 pb-16 text-center lg:pt-32"
+      className="h-[86vh] w-full pt-10 pb-16 text-center lg:pt-10 "
       style={{
         'background-image':
-          'linear-gradient(to top, rgba(255,255,255,0.5),rgba(255,255,255,1)),url("/images/catalog-bg.webp")',
+          'linear-gradient(to top, rgba(255,255,255,0.55),rgba(255,255,255,1)),url("/images/catalog-bg.jpeg")',
         'background-size': 'cover',
       }}
     >
+      <img src="/images/logo.png" alt="" className='m-auto hidden lg:block' />
+      <br />
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
         7{' '}
         <span className="relative whitespace-nowrap text-orange-600">
@@ -26,7 +28,7 @@ export function Hero() {
         </span>
         Bakery
       </h1>
-      <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
+      <p className="mx-10 md:mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-800 font-semibold">
         Your friendly neighbourhood bakery is here to satisfy your cravings
         without compromising on health or taste!
       </p>
@@ -36,9 +38,6 @@ export function Hero() {
         </Button>
         <Button
           href="/catalog"
-          variant="outline"
-          color="slate"
-          className="ring-gray-800"
         >
           <span>Shop Now</span>
         </Button>
