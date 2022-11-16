@@ -10,19 +10,19 @@ export default function Document(props) {
       lang="en"
     >
       <Head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-9J0S5175FC"
-        ></Script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-9J0S5175FC"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-  gtag('config', 'G-9J0S5175FC');`,
-          }}
-        ></script>
+          gtag('config', 'G-9J0S5175FC');
+        `}
+      </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
