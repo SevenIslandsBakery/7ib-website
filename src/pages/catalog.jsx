@@ -4,7 +4,7 @@
 import { Footer } from '@/components/Footer'
 import { Logo } from '@/components/Logo'
 import PagesHeader from '@/components/PagesHeader'
-import products from '@/products/products.json'
+import getProducts from '@/products/products'
 import {
   Dialog,
   Disclosure,
@@ -146,13 +146,13 @@ export default function Catalog() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   const [activeFilters, setActiveFilterState] = useState([])
   const [sortedOption, setSortedOption] = useState(sortOptions[0])
-  const [filteredProducts, setFilterProducts] = useState(products)
+  const [filteredProducts, setFilterProducts] = useState([])
   const router = useRouter()
 
   useEffect(() => {
     console.log(router)
-    if(router.isReady){
-      if(router.query.category){
+    if (router.isReady) {
+      if (router.query.category) {
         setActiveFilterState([router.query.category])
       }
     }
@@ -173,12 +173,14 @@ export default function Catalog() {
   }
 
   function updateFilterProducts() {
-    let filteredProds = products
-    filteredProds = filterByCategory(filteredProds)
-    filteredProds = filterByPrice(filteredProds)
-    // filteredProds = sortProducts(filteredProds)
-    console.log(filteredProds)
-    setFilterProducts(filteredProds)
+    getProducts().then((products) => {
+      let filteredProds = products
+      filteredProds = filterByCategory(filteredProds)
+      filteredProds = filterByPrice(filteredProds)
+      // filteredProds = sortProducts(filteredProds)
+      console.log(filteredProds)
+      setFilterProducts(filteredProds)
+    })
   }
 
   function sortProducts(prods) {

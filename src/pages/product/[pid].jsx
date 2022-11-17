@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Footer } from '@/components/Footer'
 import { Logo } from '@/components/Logo'
-import products from '@/products/products.json'
 import { useRouter } from 'next/router'
 
 import { Disclosure, Tab } from '@headlessui/react'
@@ -12,6 +11,8 @@ import { useEffect, useState } from 'react'
 import { HeartIcon, HomeIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/components/Button'
 import PagesHeader from '@/components/PagesHeader'
+
+import getProducts from '@/products/products'
 
 const breadcrumbs = [{ id: 1, name: 'Catalog', href: '/catalog' }]
 const policies = [
@@ -26,75 +27,62 @@ const policies = [
     description: 'No unnecessary additives',
   },
 ]
-const footerNavigation = {
-  products: [
-    { name: 'Bags', href: '#' },
-    { name: 'Tees', href: '#' },
-    { name: 'Objects', href: '#' },
-    { name: 'Home Goods', href: '#' },
-    { name: 'Accessories', href: '#' },
-  ],
-  company: [
-    { name: 'Who we are', href: '#' },
-    { name: 'Sustainability', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Careers', href: '#' },
-    { name: 'Terms & Conditions', href: '#' },
-    { name: 'Privacy', href: '#' },
-  ],
-  customerService: [
-    { name: 'Contact', href: '#' },
-    { name: 'Shipping', href: '#' },
-    { name: 'Returns', href: '#' },
-    { name: 'Warranty', href: '#' },
-    { name: 'Secure Payments', href: '#' },
-    { name: 'FAQ', href: '#' },
-    { name: 'Find a store', href: '#' },
-  ],
-}
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Product() {
-  const [product, setProduct] = useState(products[0])
+  const [product, setProduct] = useState({})
   const [relatedProducts, setRelatedProducts] = useState([])
   // const [pid, setPid] = useState(1);
   const router = useRouter()
 
   useEffect(() => {
     console.log(router)
-    const { pid } = router.query
-    if (pid) {
-      const newProduct = products.filter(
-        (prod) => prod.id.toString() === pid
-      )[0]
-      console.log(newProduct)
-      setProduct(newProduct)
-    }
+    getProducts().then((products) => {
+      const { pid } = router.query
+      if (pid) {
+        const newProduct = products.filter(
+          (prod) => prod.id.toString() === pid
+        )[0]
+        console.log(newProduct)
+        setProduct(newProduct)
+      }
+    })
   }, [router])
 
   useEffect(() => {
-    const neededProducts = products
-      .filter(
-        (prod) => prod.category === product.category && prod.id != product.id
-      )
-      .sort(() => Math.random() - 0.5)
-    if (neededProducts.length > 3) {
-      neededProducts.splice(4)
-    }
-    setRelatedProducts(neededProducts)
+    getProducts().then((products) => {
+      const neededProducts = products
+        .filter(
+          (prod) => prod.category === product.category && prod.id != product.id
+        )
+        .sort(() => Math.random() - 0.5)
+      if (neededProducts.length > 3) {
+        neededProducts.splice(4)
+      }
+      setRelatedProducts(neededProducts)
+    })
   }, [product])
 
   return (
     <div className="bg-white">
       <PagesHeader></PagesHeader>
-
       <main className="mx-auto max-w-7xl sm:px-6 sm:pt-16 lg:px-8">
+        <div
+          className={classNames(
+            'flex justify-evenly',
+            product.id ? 'hidden' : ''
+          )}
+        >
+          <img src="/images/loading.gif" alt="" />
+        </div>
         <div className="mx-auto max-w-2xl lg:max-w-none">
           {/* Product */}
-          <div className="bg-white">
+          <div
+            className={('bg-white', product.id === undefined ? 'hidden' : '')}
+          >
             <div className="pt-6 pb-16 sm:pb-24">
               <nav
                 aria-label="Breadcrumb"
@@ -188,12 +176,12 @@ export default function Product() {
                     <div
                       className={classNames(
                         'grid grid-cols-1 lg:grid-cols-2 lg:gap-8',
-                        product.imageSrc.length > 1
+                        product.imageSrc?.length > 1
                           ? 'lg:grid-rows-3'
                           : 'lg:grid-rows-2'
                       )}
                     >
-                      {product.imageSrc.map((image, index) => (
+                      {product.imageSrc?.map((image, index) => (
                         <img
                           key={index}
                           src={image}
@@ -244,10 +232,25 @@ export default function Product() {
 
                       <div className="prose prose-sm mt-4 ml-4 text-gray-500">
                         <ul className="list-disc">
-                          {product.details.map((item) => (
+                          {product.ingredients?.map((item) => (
                             <li key={item}>{item}</li>
                           ))}
                         </ul>
+                      </div>
+                    </div>
+                    <div className={[product.nutritionValue ? '' : 'hidden']}>
+                      <div className={['mt-8 border-t border-gray-200 pt-8']}>
+                        <h2 className="text-sm font-medium text-gray-900">
+                          Nutrition Value
+                        </h2>
+
+                        <div className="prose prose-sm mt-4 ml-4 text-gray-500">
+                          <ul className="list-disc">
+                            {product.nutritionValue?.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
 
@@ -294,7 +297,10 @@ export default function Product() {
           >
             <h2
               id="related-heading"
-              className={classNames('text-xl font-bold text-gray-900', relatedProducts.length==0?'hidden':'')}
+              className={classNames(
+                'text-xl font-bold text-gray-900',
+                relatedProducts.length == 0 ? 'hidden' : ''
+              )}
             >
               Customers also bought
             </h2>
